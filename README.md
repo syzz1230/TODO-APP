@@ -1,4 +1,5 @@
-<!-- Features -->
+FEATURES
+
 * Add new tasks with a title 
 * Mark tasks as complete or incomplete.
 * Edit task title 
@@ -6,7 +7,8 @@
 * Filter tasks based on their completion status.
 
 
-<!-- Usage -->
+USAGE
+
 * To add a new task, click the "Add Task" button and fill in the task details.
 * To mark a task as complete, click the "done" button next to "delete"
 * To edit a task, click the "Edit" button and modify the task details.

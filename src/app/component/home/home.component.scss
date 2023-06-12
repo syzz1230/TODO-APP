@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+* {
+  font-family: "Anton", sans-serif;
+  letter-spacing: 1px;
+  color: rgb(70, 68, 68);
+}
+
+img {
+  width: 10px;
+  height: 10px;
+}
+button {
+  padding: 0 10px;
+  margin: 0 2px;
+  border: 2px solid rgb(133, 127, 127);
+  border-radius: 5px;
+  background-color: lightskyblue;
+  span {
+    font-size: 0.75em;
+    padding-left: 5px;
+  }
+  &:hover {
+    background-color: rgb(20, 41, 230);
+    color: white;
+    span {
+      color: white;
+    }
+  }
+}
+hr {
+  width: 90%;
+  border: 1px solid rgb(156, 153, 153);
+}
+input {
+  border: 2px solid rgb(133, 127, 127);
+  border-radius: 5px;
+  padding: 0px 8px;
+}
+::placeholder {
+  opacity: 0.5; /* Adjust the value as needed */
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.todo__container {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  justify-content: space-between;
+
+  .card {
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+      0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 4px;
+    padding: 1rem 0.5rem;
+    background-color: #fff;
+  }
+}
+
+.filter-todo {
+  margin-bottom: 20px;
+}
+

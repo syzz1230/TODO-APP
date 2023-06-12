@@ -1,0 +1,62 @@
+<div class="container">
+  <h2>Todo App</h2>
+  <div ngClass="todo__add-todo">
+    <input type="text" [(ngModel)]="todoTitle" placeholder='Add Todo List' />
+    <button (click)="addTask()">Add Todo</button>
+  </div>
+  <hr />
+  <div ngClass="filter-todo">
+    <input type="text" [(ngModel)]="searchedTodo" placeholder='To Filter'/>
+
+    <button type="submit" (click)="searchTodoMethod()">Search</button>
+  </div>
+</div>
+
+<div class="todo__container">
+  <div ngClass="card" *ngFor="let item of todoArr">
+    <input
+      *ngIf="editTitle === item.title"
+      type="text"
+      [value]="item.title"
+      [(ngModel)]="todoTitle"
+    />
+    <h4
+      [ngStyle]="{
+        'text-decoration': item.status === 'complete' ? 'line-through' : 'none'
+      }"
+    >
+      {{ item.title }}
+    </h4>
+    <button
+      *ngIf="editTitle !== item.title"
+      (click)="editTitleHandler(item.title)"
+    >
+      <img src="../../../assets/edit.png" alt="" />
+      <span> Edit</span>
+    </button>
+    <button *ngIf="editTitle === item.title" (click)="editTodo('', item.id)">
+      <img src="../../../assets/done.png" alt="" />
+      <span> Done</span>
+    </button>
+
+    <button (click)="deleteTodo(item.id)">
+      <img src="../../../assets/del.png" alt="" />
+      <span>Delete</span>
+    </button>
+
+    <button (click)="editTodo(item.status, item.id)">
+      <img
+        *ngIf="item.status === 'complete'"
+        src="../../../assets/undone.png"
+        alt=""
+      />
+      <span *ngIf="item.status === 'complete'">Undone</span>
+      <img
+        *ngIf="item.status !== 'complete'"
+        src="../../../assets/done.png"
+        alt=""
+      />
+      <span *ngIf="item.status !== 'complete'">Done</span>
+    </button>
+  </div>
+</div>
